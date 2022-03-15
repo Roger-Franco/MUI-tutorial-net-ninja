@@ -4,3 +4,9 @@ Download the code & run **npm install** to install dependencies before starting 
 
 You'll also need to install Material UI as a dependency. To do this run **npm install @material-ui/core**
 # MUI-tutorial-net-ninja
+
+Comandos para instalar e executar o server:
+
+npm install -g json-server 
+
+json-server --watch data/db.json --port 8000
