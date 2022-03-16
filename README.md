@@ -13,4 +13,4 @@ json-server --watch data/db.json --port 8000
 
 npm install date-fns (formatação de datas)
 
-npm i react-masonry-css ()
+npm i react-masonry-css (Alinhar melhor os cards)
