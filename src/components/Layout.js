@@ -12,22 +12,46 @@ import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 
 const drawerWidth = 240
 
-const useStyles = makeStyles({
-  page: {
-    background: '#f9f9f9',
-    width: '100%'
-  },
-  drawer: {
-    width: drawerWidth,
-  },
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  root: {
-    display: 'flex'
-  },
-  active: {
-    background: '#f2f2f2'
+// const useStyles = makeStyles({
+//   page: {
+//     background: '#f9f9f9',
+//     width: '100%'
+//   },
+//   drawer: {
+//     width: drawerWidth,
+//   },
+//   drawerPaper: {
+//     width: drawerWidth,
+//   },
+//   root: {
+//     display: 'flex'
+//   },
+//   active: {
+//     background: '#f2f2f2'
+//   }
+// })
+const useStyles = makeStyles((theme) => {
+  return {
+    page: {
+      background: '#f9f9f9',
+      width: '100%',
+      padding: theme.spacing(3)
+    },
+    drawer: {
+      width: drawerWidth,
+    },
+    drawerPaper: {
+      width: drawerWidth,
+    },
+    root: {
+      display: 'flex'
+    },
+    active: {
+      background: '#f2f2f2'
+    },
+    title: {
+      padding: theme.spacing(2)
+    }
   }
 })
 
@@ -59,7 +83,7 @@ export default function Layout({ children }) {
         classes={{ paper: classes.drawerPaper }}
       >
         <div>
-          <Typography>
+          <Typography variant="h5" className={classes.title}>
             Ninja Notes
           </Typography>
         </div>
