@@ -12,7 +12,9 @@ const theme = createTheme({
     primary: {
       main: '#f00',
     },
-    secondary: orange
+    secondary: {
+      main: orange[500],
+    }
   },
   typography: {
     fontFamily: 'Quicksand',
