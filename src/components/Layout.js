@@ -9,6 +9,9 @@ import ListItemText from '@mui/material/ListItemText';
 import { AddCircleOutlined, SubjectOutlined } from '@mui/icons-material';
 import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import { format } from 'date-fns'
 
 const drawerWidth = 240
 
@@ -51,6 +54,14 @@ const useStyles = makeStyles((theme) => {
     },
     title: {
       padding: theme.spacing(2)
+    },
+    appbar: {
+      // width: `calc(100% - ${drawerWidth}px)!important`
+      marginLeft: 'auto'
+    },
+    toolbar: theme.mixins.toolbar,
+    date: {
+      flexGrow: 1
     }
   }
 })
@@ -75,6 +86,21 @@ export default function Layout({ children }) {
   return (
     <div className={classes.root}>
       {/* app bar */}
+      <AppBar
+        className={classes.appbar}
+        style={{ width: `calc(100% - ${drawerWidth}px)` }} // ou assim
+        elevation={0}
+      >
+        <Toolbar>
+          <Typography className={classes.date}>
+            Today is the {format(new Date(), 'do MMM Y')}
+          </Typography>
+          <Typography>
+            Roger
+          </Typography>
+        </Toolbar>
+      </AppBar>
+
       {/* side drawer */}
       <Drawer
         className={classes.drawer}
@@ -90,7 +116,7 @@ export default function Layout({ children }) {
         {/* List / Links */}
         <List>
           {menuItems.map((item) => (
-            <div className={location.pathname === item.path ? classes.active : null}>
+            <div key={item.text} className={location.pathname === item.path ? classes.active : null}>
               <ListItem
                 button
                 key={item.text}
@@ -105,7 +131,10 @@ export default function Layout({ children }) {
         </List>
       </Drawer>
 
-      <div className={classes.page}>{children}</div>
+      <div className={classes.page}>
+        <div className={classes.toolbar}></div>
+        {children}
+      </div>
     </div>
   )
 }
