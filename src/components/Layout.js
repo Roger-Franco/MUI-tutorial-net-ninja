@@ -12,6 +12,8 @@ import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import { format } from 'date-fns'
+import Avatar from '@mui/material/Avatar';
+
 
 const drawerWidth = 240
 
@@ -62,6 +64,9 @@ const useStyles = makeStyles((theme) => {
     toolbar: theme.mixins.toolbar,
     date: {
       flexGrow: 1
+    },
+    avatar: {
+      padding: theme.spacing(2)
     }
   }
 })
@@ -98,6 +103,7 @@ export default function Layout({ children }) {
           <Typography>
             Roger
           </Typography>
+          <Avatar src="/mario-av.png" className={classes.avatar} />
         </Toolbar>
       </AppBar>
 

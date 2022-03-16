@@ -10,7 +10,7 @@ import Layout from './components/Layout';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#f00',
+      main: '##D4D4D4',
     },
     secondary: {
       main: orange[500],
