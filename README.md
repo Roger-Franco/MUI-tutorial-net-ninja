@@ -4,12 +4,13 @@ Download the code & run **npm install** to install dependencies before starting 
 
 You'll also need to install Material UI as a dependency. To do this run **npm install @material-ui/core**
 # MUI-tutorial-net-ninja
-####Minhas Notas:
+
+#### Minhas Notas:
 
 ![Minhas Notas](/public/myNotes.png)
 
 
-####Criar Notas:
+#### Criar Notas:
 
 ![Criar Notas](/public/createNotes.png)
 
